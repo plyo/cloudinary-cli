@@ -1,4 +1,4 @@
-#cloudinary-utils
+#cloudinary-cli
 
 ## Description
 
@@ -18,16 +18,18 @@ A CLI tool for the Cloudinary Admin API
 
 ## Usage
 
-To install cloudinary-utils from npm, clone this repo and run:
+To use cloudinary-cli, clone this repo and run:
 
 ```
-$ cd cloudinary-utils
+$ cd cloudinary-cli
 $ npm link
 ```
 
 Then the following should give you an overview of available actions:
 
-```node ./bin/cloudinary-utils --help```
+```cloudinary-cli --help```
+
+**Note:** Requires Node with harmony (generators, destructing). v4+ works no problem
 
 ## License
 
