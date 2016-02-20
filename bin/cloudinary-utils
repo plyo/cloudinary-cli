@@ -1,0 +1,45 @@
+#!/usr/bin/env node --harmony --harmony_destructuring
+'use strict';
+
+// Deps
+const program  = require('commander');
+const cloudinary = require('cloudinary').v2;
+require('autocmdr/lib/logger')(program);
+require('autocmdr/lib/package')(program);
+require('autocmdr/lib/help')(program);
+
+cloudinary.config( {
+	cloud_name: process.env.CLOUDINARY_NAME || 'dlvphoomb',
+	api_key: process.env.CLOUDINARY_KEY || '172884345316218',
+	api_secret: process.env.CLOUDINARY_SECRET || 'wxRMu-X3aApCqzOZnl3BuMWjnm8',
+});
+
+// Commands
+require('../cmds/list.js')(program, cloudinary);
+require('../cmds/test.js')(program);
+program
+	.command('info')
+	.version('0.0.0')
+	.description('Show Cloudinary account info')
+	.action(() => {
+		cloudinary.api.ping().then(res => {
+			console.log('Cloudinary connection status:', res.status);
+			cloudinary.api.usage()
+			.then((result, err) => {
+				console.log(result)
+			});
+		})
+		.catch(err => {
+			console.warn('Cloudinary connection failed');
+			console.error(err.error);
+		});
+	});
+
+program
+	.parse(process.argv);
+
+if (program.args.length < 1 ) {
+	console.log('No command specified. See \'cloudinary-utils --help\':');
+	program.outputHelp();
+	process.exit(1);
+}

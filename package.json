@@ -1,0 +1,32 @@
+{
+  "name": "cloudinary-cli",
+  "version": "0.0.0",
+  "description": "A CLI tool for interacting with the the Cloudinary Admin API",
+  "private": true,
+  "bin": {
+    "cloudinary-cli": "./bin/cloudinary-cli"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "author": {
+    "name": "Aksel G. Gresvig",
+    "email": "aksel@agresvig.com",
+    "url": "https://github.com/Plyo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Plyo/cloudinary-cli"
+  },
+  "license": "MIT",
+  "bugs": "https://github.com/AGresvig/cloudinary-cli/issues",
+  "dependencies": {
+    "autocmdr": "~0.0.7",
+    "cloudinary": "^1.3.0",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "~2.0.0",
+    "lodash": "^4.5.0"
+  },
+  "devDependencies": {}
+}
