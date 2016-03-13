@@ -9,9 +9,9 @@ require('autocmdr/lib/package')(program);
 require('autocmdr/lib/help')(program);
 
 cloudinary.config( {
-	cloud_name: process.env.CLOUDINARY_NAME || 'dlvphoomb',
-	api_key: process.env.CLOUDINARY_KEY || '172884345316218',
-	api_secret: process.env.CLOUDINARY_SECRET || 'wxRMu-X3aApCqzOZnl3BuMWjnm8',
+	cloud_name: process.env.CLOUDINARY_NAME,
+	api_key: process.env.CLOUDINARY_KEY,
+	api_secret: process.env.CLOUDINARY_SECRET,
 });
 
 // Commands
